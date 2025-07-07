@@ -15,7 +15,7 @@ export default function Header() {
         >
             <Flex justifyContent="space-between" alignItems="center">
                 <Heading>Expenses Tracker</Heading>
-                <Button padding="5px" border="2px solid black" borderRadius="5px">Login</Button>
+                <Button border="2px solid black" borderRadius="5px" width="75px">Login</Button>
             </Flex>
         </Box>
     );
