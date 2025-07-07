@@ -4,11 +4,15 @@ import {
   Heading,
 } from "@chakra-ui/react"
 import ExpenseLogger from "@/components/ExpenseLogger";
+import Header from "@/components/Header";
 
 export default function Home() {
   return(
-    <Flex height="100vh" justify="center" padding="7em">
-      <ExpenseLogger/>
-    </Flex>
+    <>
+      <Header></Header>
+      <Flex height="100vh" justify="center" padding="2em">
+        <ExpenseLogger/>
+      </Flex>
+    </>
   );
 }
