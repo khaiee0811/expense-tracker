@@ -1,5 +1,14 @@
+import {
+  Box,
+  Flex,
+  Heading,
+} from "@chakra-ui/react"
+import ExpenseLogger from "@/components/ExpenseLogger";
+
 export default function Home() {
   return(
-    <h1>Hello World</h1>
+    <Flex height="100vh" justify="center" padding="7em">
+      <ExpenseLogger/>
+    </Flex>
   );
 }
