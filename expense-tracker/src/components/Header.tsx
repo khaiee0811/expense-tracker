@@ -3,6 +3,7 @@ import {
     Heading,
     Flex,
     Button,
+    Link,
 } from "@chakra-ui/react";
 
 export default function Header() {
@@ -15,7 +16,15 @@ export default function Header() {
         >
             <Flex justifyContent="space-between" alignItems="center">
                 <Heading>Expenses Tracker</Heading>
-                <Button border="2px solid black" borderRadius="5px" width="75px">Login</Button>
+                <Link href="/login">
+                    <Button 
+                        border="2px solid black" 
+                        borderRadius="5px" 
+                        width="75px"
+                    >
+                        Login
+                    </Button>
+                </Link>
             </Flex>
         </Box>
     );

@@ -9,6 +9,7 @@ import {
 import Header from "@/components/Header";
 
 export default function Home() {
+
   return(
     <>
       <Header></Header>
@@ -27,7 +28,12 @@ export default function Home() {
             mb={3}
             placeholder="What is your name?"
           />
-          <Button colorScheme="teal" variant="solid">Get Started</Button>
+          <Button 
+            colorScheme="teal" 
+            variant="solid"
+          >
+            Get Started
+          </Button>
         </Box>
       </Flex>
     </>
