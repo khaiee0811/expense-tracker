@@ -9,6 +9,7 @@ import {
     FormControl,
     FormLabel,
     Button,
+    Text,
 } from "@chakra-ui/react"
 
 export default function Login() {
@@ -61,6 +62,11 @@ export default function Login() {
                         required
                         mb={7}
                     />
+                    {error && (
+                    <Text color="red.500" mb={4} textAlign="center">
+                        {error}
+                    </Text>
+                    )}
                     <Flex justify="center" mb={10}>
                         <Button width="100px" colorScheme="green" onClick={handleSubmit}>Login</Button>
                     </Flex>
