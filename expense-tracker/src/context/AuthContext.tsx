@@ -13,7 +13,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({children}: { children: React.ReactNode}) {
     const [user, setUser] = useState<User | null>(null);
     const [users, setUsers] = useState<User[]>([]);
-
+    
     useEffect(() => {
         // Initialize users from localStorage or default users
         const storedUsers = localStorage.getItem("users");
@@ -23,6 +23,11 @@ export function AuthProvider({children}: { children: React.ReactNode}) {
         }
         else {
             setUsers(JSON.parse(storedUsers));
+        }
+
+        const storedUser = localStorage.getItem("currentUser");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
         }
     }, []);
 
