@@ -5,8 +5,18 @@ import {
     Button,
     Link,
 } from "@chakra-ui/react";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/router";
 
 export default function Header() {
+    const { user, logout } = useAuth();
+    const router = useRouter();
+
+    const handleLogout = () => {
+        logout();
+        router.push("/");
+    }
+
     return(
         <Box 
             padding="2em" 
@@ -16,15 +26,27 @@ export default function Header() {
         >
             <Flex justifyContent="space-between" alignItems="center">
                 <Heading>Expenses Tracker</Heading>
-                <Link href="/login">
-                    <Button 
-                        border="2px solid black" 
-                        borderRadius="5px" 
+                {user? (
+                    <Button
+                        onClick={handleLogout}
+                        border="2px solid black"
+                        borderRadius="5px"
                         width="75px"
                     >
-                        Login
+                        Logout
                     </Button>
-                </Link>
+                ) : (
+                    <Link href="/login">
+                        <Button 
+                            border="2px solid black" 
+                            borderRadius="5px" 
+                            width="75px"
+                        >
+                            Login
+                        </Button>
+                    </Link>
+                )
+                }
             </Flex>
         </Box>
     );
