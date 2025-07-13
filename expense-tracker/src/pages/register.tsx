@@ -13,25 +13,11 @@ import {
     Link,
 } from "@chakra-ui/react"
 
-export default function Login() {
+export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const { login } = useAuth();
     const router = useRouter();
-    
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setError("");
-
-        const success = login(email, password);
-        if (success) {
-            router.push("/dashboard");
-        }
-        else {
-            setError("Invalid username or password");
-        }
-    }
 
 
     return(
@@ -41,7 +27,7 @@ export default function Login() {
 
             </Box>
 
-            {/* Right: Login Box */}
+            {/* Right: Register Box */}
             <Flex
                 flex="1"
                 justifyContent="center"
@@ -49,7 +35,7 @@ export default function Login() {
                 bg="gray.50"
             >
                 <Box border="1px solid black" p="4em" pb="2em" borderRadius={10}>
-                    <Heading mb={8}>Login</Heading>
+                    <Heading mb={8}>Sign Up</Heading>
                     <FormLabel>Email</FormLabel>
                     <Input 
                         value={email}
@@ -64,17 +50,24 @@ export default function Login() {
                         required
                         mb={7}
                     />
+                    <FormLabel>Confirm Password</FormLabel>
+                    <Input 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        mb={7}
+                    />
                     {error && (
                     <Text color="red.500" mb={4} textAlign="center">
                         {error}
                     </Text>
                     )}
                     <Flex justify="center" mb={10}>
-                        <Button width="100px" colorScheme="green" onClick={handleSubmit}>Login</Button>
+                        <Button width="100px" colorScheme="green">Sign Up</Button>
                     </Flex>
                     <Flex justify="center">
-                        <Link href="/register">
-                            <Button fontSize="14px" variant="link">Sign Up</Button>
+                        <Link href="/login">
+                            <Button fontSize="14px" variant="link">Already have an account?</Button>
                         </Link>
                     </Flex>
                 </Box>
