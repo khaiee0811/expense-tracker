@@ -13,6 +13,7 @@ This is a personal expense tracker built with **Next.js**, **React**, and **Type
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://chakra-ui.com/)
+- [Recharts](https://recharts.org/)
 
 ## Getting Started
 
